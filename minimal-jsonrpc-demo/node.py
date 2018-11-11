@@ -15,6 +15,7 @@ def increment(graph):
     for c in graph.children:
         increment(c)
 
+
 # Method to turn graph into a dictionary to send over
 def listToSend(graph, dictionary={}):
     # Update the dictionary to contain the whole graph

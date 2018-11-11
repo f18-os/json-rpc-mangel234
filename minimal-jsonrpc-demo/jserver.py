@@ -19,7 +19,12 @@ class ServerServices(object):
 
     @request
     def nop(self, txt):
-        print(txt)
+        # Modifying this so I can write to a file from server side
+        f = open("tree.txt", "a")
+        f.write(txt)
+        f.write(" ")
+        f.write("\n")
+        f.close()
         return txt
 
 
@@ -32,3 +37,4 @@ while True:
     s, _ = ss.accept()
     # JSONRpc object spawns internal thread to serve the connection.
     JSONRpc(s, ServerServices(), framing_cls=JSONFramingNone)
+

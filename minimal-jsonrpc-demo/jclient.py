@@ -44,6 +44,7 @@ json_string = json.dumps(dictionaryToSend)
 server.nop(json_string)
 print(server.nop(json_string))
 
+
 # Execute in server:
 result = server.swapper('Hello World!')
 # "!dlroW olleH"
